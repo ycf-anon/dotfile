@@ -1,0 +1,14 @@
+show=drun
+width=520
+height=406
+always_parse_args=true
+show_all=false
+term=kitty
+hide_scroll=true
+print_command=true
+insensitive=true
+prompt= Search Apps
+columns=1
+allow_images=false
+image_size=32
+line_wrap=false

@@ -1,0 +1,92 @@
+@import "/home/adem/.cache/wal/colors-waybar.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @foreground; /* Changed from var(--foreground) */
+}
+
+/* === Shared Module Style === */
+#clock,
+#custom-updates,
+#custom-root,
+#custom-home,
+#memory,
+#cpu,
+#temperature,
+#pulseaudio,
+#network {
+    background-color: @color0; /* Changed from var(--color0) */
+    padding: 5px 10px;
+    margin: 5px 0px;
+    text-shadow: 0 0 2px #000000aa;
+
+}
+
+/* === Clock === */
+#clock {
+    color: @color3; /* Changed from var(--color3) */
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 10px;
+}
+
+/* === Custom Modules === */
+#custom-updates {
+    color: @color2; /* Changed from var(--color2) */
+}
+
+#custom-root {
+    color: @color4; /* Changed from var(--color4) */
+}
+
+#custom-home {
+    color: @color2; /* Changed from var(--color2) */
+}
+
+/* === System Stats === */
+#memory {
+    color: @color5; /* Changed from var(--color5) */
+}
+
+#cpu {
+    color: @color3; /* Changed from var(--color3) */
+    letter-spacing: 1px;
+}
+
+#temperature {
+    color: @color1; /* Changed from var(--color1) */
+}
+
+#temperature.critical {
+    color: @color1; /* Changed from var(--color1) */
+    font-weight: bold;
+}
+
+/* === Audio & Network === */
+#pulseaudio {
+    color: @color5; /* Changed from var(--color5) */
+}
+
+#network {
+    color: @color6; /* Changed from var(--color6) */
+    border-radius: 5px 0px 0px 5px;
+}
+
+/* === MPD Module === */
+#custom-mpd {
+    color: @foreground; /* Changed from var(--foreground) */
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    padding: 0 8px;
+}
+
+#custom-mpd:hover {
+    color: @color3; /* Changed from var(--color3) */
+}

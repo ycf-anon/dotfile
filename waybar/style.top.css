@@ -1,0 +1,98 @@
+@import "/home/adem/.cache/wal/colors-waybar.css";
+
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    border: none;
+    padding: 2px 6px;
+}
+
+window#waybar {
+    background: @background; /* Changed from var(--background) */
+    color: @foreground;     /* Changed from var(--foreground) */
+    border-radius: 8px;
+    margin: 5px 10px 0 10px;
+}
+
+/* === Module Base Style === */
+#custom-launcher,
+#custom-greeting,
+#custom-uptime,
+#custom-netstatus,
+#custom-weather,
+#custom-mpd,
+#pulseaudio,
+#clock,
+#custom-power,
+#tray,
+#workspaces,
+#window {
+    background: @color0; /* Changed from var(--color0) */
+    margin: 0 4px;
+    padding: 0 10px;
+    border-radius: 8px;
+    text-shadow: 0 0 2px #00000088;
+}
+
+/* === Module Dynamic Accent Colors === */
+#custom-launcher  { color: @color4; } /* Changed */
+#custom-greeting  { color: @color7; } /* Changed */
+#custom-uptime    { color: @color3; } /* Changed */
+#custom-netstatus { color: @color2; } /* Changed */
+#custom-weather   { color: @color5; } /* Changed */
+#custom-mpd       { color: @color7; font-weight: bold; } /* Changed */
+#pulseaudio       { color: @color1; } /* Changed */
+#clock            { color: @color3; } /* Changed */
+
+#custom-power {
+    color: @color1; /* Changed */
+    background: rgba(18, 20, 28, 0.95); /* This is a hardcoded RGBA, keep it */
+    border-radius: 6px;
+    font-weight: bold;
+    text-shadow: 0 0 3px @color1; /* Changed */
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+#custom-power:hover {
+    background-color: @color1; /* Changed */
+    color: @background; /* Changed */
+    text-shadow: none;
+}
+
+/* === Workspaces === */
+#workspaces button {
+    padding: 2px 8px;
+    margin: 0 3px;
+    border-radius: 8px;
+    background: transparent;
+    color: @color8; /* Changed */
+    border: none;
+    font-weight: normal;
+}
+
+#workspaces button.focused {
+    background: @color3; /* Changed */
+    color: @background; /* Changed */
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+#workspaces button:hover {
+    background-color: @color0; /* Changed */
+    color: @color3; /* Changed */
+}
+
+/* === Optional Tray/Window Style === */
+#window {
+    color: @color7; /* Changed */
+    font-weight: bold;
+}
+
+#window.empty {
+    background: transparent;
+    border: none;
+    color: transparent;
+    padding: 0;
+    margin: 0;
+}

@@ -1,0 +1,118 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "margin": "5 10 0 10",
+  "modules-left": [
+    "custom/launcher",
+    "sway/workspaces"
+  ],
+  "modules-center": [
+    "sway/window"
+  ],
+  "modules-right": [
+
+    "tray",
+    "",
+    "custom/uptime",
+    "custom/netstatus",
+    "pulseaudio",
+    "custom/weather",
+    "custom/power"
+  ],
+  "custom/launcher": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/greeting": {
+    "exec": "/home/adem/.config/waybar/scripts/greeting.sh",
+    "format": "{}",
+    "interval": 60,
+    "class": "greeting"
+  },
+  "custom/uptime": {
+    "format": " {}",
+    "exec": "~/.config/waybar/scripts/uptime.sh",
+    "interval": 60
+  },
+  "custom/updates": {
+    "interval": 1800,
+    "exec": "checkupdates | wc -l",
+    "format": " {}",
+    "tooltip": "System Updates"
+  },
+  "sway/workspaces": {
+    "format": "{icon}",
+    "on-click": "swaymsg workspace number {}",
+    "all-outputs": true,
+    "format-icons": {
+      "1": "󰋜",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "󰭹",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": []
+    }
+  },
+  "custom/mpd": {
+    "format": "{}",
+    "max-length": 40,
+    "exec": "~/.config/waybar/scripts/mpd-status.sh",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "mpc toggle",
+    "on-click-right": "mpc next",
+    "on-click-middle": "mpc prev"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 Muted",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    }
+  },
+  "clock": {
+    "format": " {:%I:%M %p}"
+  },
+  "custom/netstatus": {
+    "exec": "~/.config/waybar/scripts/netstatus.sh",
+    "interval": 3,
+    "return-type": "json"
+  },
+  "custom/weather": {
+    "exec": "~/.config/waybar/scripts/weather.sh",
+    "interval": 1800,
+    "format": " {}",
+    "tooltip": "Local Weather"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 6
+  },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": "Power Menu",
+    "on-click": "~/.config/waybar/scripts/powermenu.sh"
+  }
+}

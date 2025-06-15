@@ -1,0 +1,80 @@
+{
+  "position": "bottom",
+"background": "#0e0c17ee", // very dark with alpha
+  "height": 30,
+  "modules-left": ["custom/mpd"],
+  "modules-right": ["network", "custom/updates", "memory", "temperature", "cpu", "custom/root", "custom/home", "clock"],
+
+  "custom/date": {
+    "format": "󰸗 {}",
+    "interval": 3600,
+    "exec": "$HOME/bin/waybar-date.sh"
+  },
+
+  "custom/power": {
+    "format": "󰐥",
+    "on-click": "$HOME/bin/waybar-power.sh"
+  },
+
+"clock": {
+  "format": " {:%H:%M  %A, %d %B}",
+  "interval": 60
+},
+
+
+  "custom/root": {
+    "format": " / {}",
+    "exec": "df -h / | awk 'NR==2 {print $3\"/\"$2}'",
+    "interval": 30
+  },
+
+  "custom/home": {
+    "format": " {}",
+    "exec": "df -h /home | awk 'NR==2 {printf \"%s/%s\", $3, $2}'",
+    "interval": 30
+  },
+
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "format": " {temperatureC}°C",
+    "critical-threshold": 80,
+    "format-critical": "🔥 {temperatureC}°C"
+  },
+
+  "memory": {
+    "format": "󰍛 {used:0.1f}G",
+    "interval": 5
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": false,
+    "interval": 2
+  },
+
+  "custom/updates": {
+    "interval": 1800,
+    "exec": "checkupdates | wc -l",
+    "format": " {}",
+    "tooltip": "System Updates"
+  },
+
+  "custom/mpd": {
+    "format": "{}",
+    "max-length": 40,
+    "exec": "~/.config/waybar/scripts/mpd-status.sh",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "mpc toggle",
+    "on-click-right": "mpc next && mpc play",
+    "on-click-middle": "mpc prev"
+  },
+
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": " Connected",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "󰤮 Disconnected",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  }
+}
